@@ -1,0 +1,14 @@
+.container {
+  display: flex; 
+}
+
+img {
+width: 300px;
+margin: 50px;
+flex-direction: grow; 
+}
+
+img:hover {
+  width: 400px;
+  margin: 0;
+}
