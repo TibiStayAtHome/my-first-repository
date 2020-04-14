@@ -49,18 +49,27 @@ $("#nav-forward").click(() => {
     $('#photo-description').text(imagesData[currentPhoto].description);
     currentPhoto++;
     }
-    else {
+
+    else if (currentPhoto === 7) {
+    currentPhoto = 0;      
     $('#photo').attr('src', imagesData[currentPhoto].photo); 
     $('#photo-title').text(imagesData[currentPhoto].title);
     $('#photo-description').text(imagesData[currentPhoto].description);
-    
     }
     });
 
     $("#nav-back").click(() => {
+        if (currentPhoto === 0) {
+         currentPhoto = 7;   
         $('#photo').attr('src', imagesData[currentPhoto].photo); 
         $('#photo-title').text(imagesData[currentPhoto].title);
         $('#photo-description').text(imagesData[currentPhoto].description);
-            currentPhoto--;
-        })
+        }
+        else if (0 < currentPhoto < 7) {
+        $('#photo').attr('src', imagesData[currentPhoto].photo); 
+        $('#photo-title').text(imagesData[currentPhoto].title);
+        $('#photo-description').text(imagesData[currentPhoto].description);
+         currentPhoto--;
+        }
+        });
      
