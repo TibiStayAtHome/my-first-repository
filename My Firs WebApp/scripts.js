@@ -60,12 +60,12 @@ $("#nav-forward").click(() => {
 
     $("#nav-back").click(() => {
         if (currentPhoto === 0) {
-         currentPhoto = 7;   
+         currentPhoto = 6;   
         $('#photo').attr('src', imagesData[currentPhoto].photo); 
         $('#photo-title').text(imagesData[currentPhoto].title);
         $('#photo-description').text(imagesData[currentPhoto].description);
         }
-        else if (0 < currentPhoto < 7) {
+        else if (0 <= imagesData.length) {
         $('#photo').attr('src', imagesData[currentPhoto].photo); 
         $('#photo-title').text(imagesData[currentPhoto].title);
         $('#photo-description').text(imagesData[currentPhoto].description);
