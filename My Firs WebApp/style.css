@@ -1,6 +1,8 @@
 body {
     margin: auto;
     background-image: url("https://images.pexels.com/photos/1227511/pexels-photo-1227511.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+    flex-direction: column;
+    display: flex;
 }
 #photo {
    width: 700px;
@@ -47,3 +49,16 @@ body {
     color: lightblue;
 
 }
+.thumbnails {
+    position: relative;
+    top: 60px;
+    display: flex;
+    margin: auto;  
+}
+
+#thumbnails-img {
+    width: 120px;
+    height: 80px;
+    margin-top: 200px;
+}
+
