@@ -83,7 +83,6 @@ $("#nav-forward").click(() => {
                     '<div class="childDIV" id="childID-' + i + '"><h2> '+ photo.title + '</h2> <img " src="' + photo.photo + '" data-number="' + i + '"id="thumbnails-img"></div>'        
                     ) 
                  i++;
-                 
                 });     
 
                 
@@ -92,10 +91,38 @@ $("#nav-forward").click(() => {
                     $('#photo').attr('src', imagesData[currentPhoto].photo);
                     $('#photo-title').text(imagesData[currentPhoto].title);
                     $('#photo-description').text(imagesData[currentPhoto].description);
+                   
+                    
                 });
 
+                $('.childDIV').click(function() {
+                    $('#photo').animate({height: 'toggle'},1)
+                               .animate({height: 'show'})
+                    
+                    });
 
+
+                    $('#nav-back').click(function() {
+                        $('#photo').animate({height: 'hide'},1)
+                                   .animate({height: 'show'})
+                        
+                        });
+
+                        $('#nav-forward').click(function() {
+                            $('#photo').animate({height: 'toggle'},1)
+                                       .animate({height: 'show'})
+                            
+                            });
+                  
+              
+            
                 
+
+
+        
+               
+                
+                  
                    
                     
     
