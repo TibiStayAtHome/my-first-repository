@@ -37,9 +37,12 @@ let photo7 = {
 let imagesData = [photo1, photo2, photo3, photo4, photo5, photo6, photo7];
 let currentPhoto = 0;
 
+
+
 $('#photo').attr('src', imagesData[currentPhoto].photo);
 $('#photo-title').text(imagesData[currentPhoto].title);
 $('#photo-description').text(imagesData[currentPhoto].description);
+
 
 
 $("#nav-forward").click(() => {
@@ -72,4 +75,29 @@ $("#nav-forward").click(() => {
          currentPhoto--;
         }
         });
-     
+
+        
+        let i = 0;  
+        imagesData.forEach(photo => {
+                $('.thumbnails').append(
+                    '<div class="childDIV" id="childID-' + i + '"><h2> '+ photo.title + '</h2> <img " src="' + photo.photo + '" data-number="' + i + '"id="thumbnails-img"></div>'        
+                    ) 
+                 i++;
+                 
+                });     
+
+                
+                $(".childDIV").on( "click",function (event) {
+                    currentPhoto = $(event.target).attr("data-number");
+                    $('#photo').attr('src', imagesData[currentPhoto].photo);
+                    $('#photo-title').text(imagesData[currentPhoto].title);
+                    $('#photo-description').text(imagesData[currentPhoto].description);
+                });
+
+
+                
+                   
+                    
+    
+
+        
